@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <title>HTML5 – Estrutura básica</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/script.js' %}"></script>
+
+</head>
+
+<body>
+    <!-- <p>Esse é o perfil de {{ nome }}</p>   -->
+    <!-- {% if nome == "Agnes" %}    comandos python interpretados pelo Django  -->
+    <!-- <p>Sim, essa é a pagina de Agnes</p>  -->
+    <!-- {% elif nome == "João" %}  -->
+    <!-- <p>Essa página não é de Agnes</p>  -->
+    <!-- {% else %}  -->
+    <!-- <p>Essa página não é de ninguém conhecido</p> -->
+    <!-- {% endif %}  -->
+
+    <p>Esse é o perfil de {{ nome }}</p> 
+    {% if nome == "cachorro" %}    <!-- comandos python interpretados pelo Django-->
+    <p>Sim, essa é a pagina de cachorros</p>
+    {% elif nome == "gato" %}
+    <p>Essa página é de gatos</p>
+    {% else %}
+    <p>Essa página não é de nada</p>
+    {% endif %}
+
+    <h1>Esses são nossos dogs</h1>
+    <ul>
+    {% for dog in cachorros %}
+        <li>{{dog}}</li>
+    {% endfor %}
+    </ul>
+    
+    <h3>Estamos na aplicação APP do Projeto Aula401</h3>
+</body>
+
+</html>
